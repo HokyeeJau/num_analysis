@@ -25,7 +25,7 @@ program findprime
 	ifodd = .true.
 	! Judge if the number can be divided without reminder
 	! The 2nd method
-	do i = 2, 10000, +1 
+	do i = 1, 10000, +1 
 		! Judgement
 		stadd = sqrt(float(i))+1
 		stad = ifix(stadd)
@@ -45,11 +45,15 @@ program findprime
 		end if
 	end do
 
+	!record in txt
+	open(1, file='lab_1_test_2.txt')
 	print *, 'There are ', index-1, ' prime numbers'
+	write(1, *) 'There are ', index-1, ' prime numbers'
 	i = 1
 	do 
 		if(warehouse(i) /= 0) then
 			print *, warehouse(i)
+			write(1, *) warehouse(i)
 			i = i + 1
 		else
 			exit
