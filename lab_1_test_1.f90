@@ -7,6 +7,7 @@ program first
 	logical :: ifPalindromic
 	character(len=20) :: dateinfo 
 	character(len=25) :: timeinfo
+	character :: ifOut
 
 	!current date and time
 	call date_and_time(dateinfo, timeinfo)
@@ -17,18 +18,30 @@ program first
 	!---------------time and declaration block-------------------!
 
 	! Compute the length of the string
-	print *, 'input your number less than 40 char'
-	read *, str
-	strlen = len_trim(str)
+	open(1, file='lab_1_test_1.txt')
+	do 
+		print *, 'input your number less than 40 char'
+		read *, str
+		strlen = len_trim(str)
 
-	! Judge if string is palindromic
-	call ifStrPalin(str, strlen, ifPalindromic)
+		! Judge if string is palindromic
+		! And record them in a txt
+		call ifStrPalin(str, strlen, ifPalindromic)
+	
+		write(1, *) str, strlen
+		if(ifPalindromic .eqv. .true.) then
+			print *, 'It is palindromic'
+			write(1, *) 'It is palindromic'
+		else
+			print *, 'It is not palindromic'
+			write(1, *) 'It is not palindromic'
+		end if 
 
-	if(ifPalindromic .eqv. .true.) then
-		print *, 'It is palindromic'
-	else
-		print *, 'It is not palindromic'
-	end if 
+		print *, 'If you continue to test, kick Y'
+		read *, ifOut
+		if(ifOut == 'Y' .or. ifOut =='y') exit
+
+	end do
 
 end program first
 
