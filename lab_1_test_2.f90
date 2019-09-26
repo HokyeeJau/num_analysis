@@ -25,7 +25,7 @@ program findprime
 	ifodd = .true.
 	! Judge if the number can be divided without reminder
 	! The 2nd method
-	do i = 1, 10000, +1 
+	do i = 2, 10000, +1 
 		! Judgement
 		stadd = sqrt(float(i))+1
 		stad = ifix(stadd)
