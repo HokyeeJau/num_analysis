@@ -1,0 +1,32 @@
+ 87678                                              5
+ It is palindromic
+ 9990                                               4
+ It is not palindromic
+ 67776                                              5
+ It is palindromic
+
+ !output in terminal
+
+ 2019.09.26.
+ 12:46:51.533
+ input your number less than 40 char
+87678
+ In subroutine
+           5
+ It is palindromic
+ If you continue to test, kick Y
+k
+ input your number less than 40 char
+9990
+ In subroutine
+           4
+ It is not palindromic
+ If you continue to test, kick Y
+d
+ input your number less than 40 char
+67776
+ In subroutine
+           5
+ It is palindromic
+ If you continue to test, kick Y
+y
