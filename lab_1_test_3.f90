@@ -5,11 +5,24 @@ program matsum
 	! Calculate the sum of sub-diagonal values and store in an array of size 200
 	! Store the matrix and the sum into txt
 
+	!---------------time and declaration block-------------------!
+	! Declare variables
 	! Declaration
 	integer, dimension(4, 4) :: matrix
 	integer, dimension(8) :: subsum
 	integer :: i, j, row, vol, temp
+	character(len=20) :: dateinfo 
+	character(len=25) :: timeinfo
 
+
+	!current date and time
+	call date_and_time(dateinfo, timeinfo)
+	dateinfo = dateinfo(1:4)//'.'//dateinfo(5:6)//'.'//dateinfo(7:8)//'.'
+	timeinfo = timeinfo(1:2)//':'//timeinfo(3:4)//':'//timeinfo(5:10)
+	print *, trim(dateinfo)
+	print *, trim(timeinfo)
+	!---------------time and declaration block-------------------!
+	
 	! Input
 
 	open(1, file='lab_1_test_3.txt')
